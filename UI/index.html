@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>GetFit</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/f0601b0fb2.js" crossorigin="anonymous"></script>
+    <script type='module' src='https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js'></script>
+    <script nomodule='' src='https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js'></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-database.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+
+
+</head>
+
+<body translate="no" onload="connect()">
+
+    <div class="components" id="home">
+        <div class="hello">
+            Hello Nekhil
+        </div>
+        <div class="header__info">
+            Start Your <label>Workout</label>
+        </div>
+
+        <div class="btn__main">
+            <img src="assets/img/icon.svg">
+            <div class="btn" id="startBtn" onclick="start()">Start Workout</div>
+        </div>
+
+        <!--Today's Activity-->
+        <div class="activity__main">
+            Today's Activity
+        </div>
+        <div class="details" id="todays_arrow">
+            <ion-icon name="arrow-forward-outline"></ion-icon>
+        </div>
+        <div class="todays_activity calorie">
+            <div class="exercise__names__calories">CALORIES<br><label id="todays_calorie">0</label></div>
+        </div>
+        <div class="todays_activity pushup">
+            <div class="exercise__names">PUSHUPS<br><label id="todays_pushups">0</label></div>
+        </div>
+        <div class="todays_activity squats">
+            <div class="exercise__names">SQUATS<br><label id="todays_squats">0</label></div>
+        </div>
+        <div class="todays_activity armcircles">
+            <div class="exercise__names__armcircles">ARMCIRCLES<br><label id="todays_armcircles">0</label></div>
+        </div>
+
+        <!--Weekly Stats-->
+        <div class="weekly__main">
+            Weekly Activity
+        </div>
+        <div class="weekly__details">
+            <ion-icon name="arrow-forward-outline"></ion-icon>
+        </div>
+        <div class="weekday mon" onclick="showDayActivity('monday')">
+            <p>MON</p>
+        </div>
+        <div class="weekday tue" onclick="showDayActivity('tuesday')">
+            <p>TUE</p>
+        </div>
+        <div class="weekday wed" onclick="showDayActivity('wednesday')">
+            <p>WED</p>
+        </div>
+        <div class="weekday thu" onclick="showDayActivity('thursday')">
+            <p>THU</p>
+        </div>
+
+        <!--Navbar-->
+        <div class="icon" id="navbar__home">
+            <div class="icon__home">
+                <ion-icon name="home"></ion-icon>
+            </div>
+            <div class="icon__activity">
+                <ion-icon name="pulse"></ion-icon>
+            </div>
+            <div class="icon__account">
+                <ion-icon name="person"></ion-icon>
+            </div>
+            <div class="icon__settings" onclick="requestDevice()">
+                <ion-icon name="bluetooth"></ion-icon>
+            </div>
+        </div>
+    </div>
+
+    <div class="components" id="daily__activity">
+
+        <div class="activity__stats">
+            <ion-icon name="arrow-back-outline" id="arrow__icon"></ion-icon>
+            <p>Daily Activity <label> Stats</label></p>
+        </div>
+        <div id="activity">
+            <div class="activity__card" id="activity__pushup">
+                <div class="exercise__name">PUSHUP<br><label id="pushups__count">0</label></div>
+
+            </div>
+            <div class="activity__card" id="activity__squats">
+                <div class="exercise__name">SQUATS<br><label id="squats__count">0</label></div>
+
+            </div>
+            <div class="activity__card" id="activity__armcircles">
+                <div class="exercise__name">ARMCIRCLES<br><label id="armcircles__count">0</label></div>
+
+            </div>
+            <div class="activity__card" id="activity__situp">
+                <div class="exercise__name">SITUP<br><label id="situp__count">0</label></div>
+
+            </div>
+            <div class="activity__card" id="activity__pullup">
+                <div class="exercise__name">PULLUP<br><label id="pullup__count">0</label></div>
+
+            </div>
+            <div class="activity__card" id="activity__planck">
+                <div class="exercise__name">PLANCK<br><label id="planck__count">0</label></div>
+            </div>
+        </div>
+
+        <div class="icon" id="navbar__activity">
+            <div class="icon__home">
+                <ion-icon name="home"></ion-icon>
+            </div>
+            <div class="icon__activity">
+                <ion-icon name="pulse"></ion-icon>
+            </div>
+            <div class="icon__account">
+                <ion-icon name="person"></ion-icon>
+            </div>
+            <div class="icon__settings" onclick="requestDevice()">
+                <ion-icon name="bluetooth"></ion-icon>
+            </div>
+        </div>
+    </div>
+
+    <div class="components" id="current__activity">
+        <div id="activity__current">
+            <div class="current__activity__card" id="current__activity__card">
+                <div id="current__info">
+                    <div id="exercise"></div>
+                    <div id="count"></div>
+                </div>
+                <div class="lds-ripple" id="lds-ripple">
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+            <div class="btn btn__secondary" id="stopBtn" onclick="stop()">Stop Workout</div>
+        </div>
+
+        <div class="icon" id="navbar__current">
+            <div class="icon__home">
+                <ion-icon name="home"></ion-icon>
+            </div>
+            <div class="icon__activity">
+                <ion-icon name="pulse"></ion-icon>
+            </div>
+            <div class="icon__account">
+                <ion-icon name="person"></ion-icon>
+            </div>
+            <div class="icon__settings" onclick="requestDevice()">
+                <ion-icon name="bluetooth"></ion-icon>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="components" id="day__activity">
+        <div class="activity__stats">
+            <ion-icon name="arrow-back-outline" id="arrow__icon"></ion-icon>
+            <p id="day_name">Daily Activity <label> Stats</label></p>
+        </div>
+        <div id="activity">
+            <div class="activity__card" id="activity__pushup">
+                <div class="exercise__name">PUSHUP<br><label id="day__pushups__count">0</label></div>
+
+            </div>
+            <div class="activity__card" id="activity__squats">
+                <div class="exercise__name">SQUATS<br><label id="day__squats__count">0</label></div>
+
+            </div>
+            <div class="activity__card" id="activity__armcircles">
+                <div class="exercise__name">ARMCIRCLES<br><label id="day__armcircles__count">0</label></div>
+
+            </div>
+            <div class="activity__card" id="activity__situp">
+                <div class="exercise__name">SITUP<br><label id="day__situp__count">0</label></div>
+
+            </div>
+            <div class="activity__card" id="activity__pullup">
+                <div class="exercise__name">PULLUP<br><label id="day__pullup__count">0</label></div>
+
+            </div>
+            <div class="activity__card" id="activity__planck">
+                <div class="exercise__name">PLANCK<br><label id="day__planck__count">0</label></div>
+            </div>
+        </div>
+        <div class="icon" id="navbar__activity">
+            <div class="icon__home">
+                <ion-icon name="home"></ion-icon>
+            </div>
+            <div class="icon__activity">
+                <ion-icon name="pulse"></ion-icon>
+            </div>
+            <div class="icon__account">
+                <ion-icon name="person"></ion-icon>
+            </div>
+            <div class="icon__settings" onclick="requestDevice()">
+                <ion-icon name="bluetooth"></ion-icon>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="components" id="personal">
+        <div class="activity__stats">
+            <ion-icon name="arrow-back-outline" id="arrow__icon"></ion-icon>
+            <p id="day_name">Personal <label> Information</label></p>
+        </div>
+        <div class="search__name" id="name">Name</div>
+        <input type="text" class="search__input" id="name_value" placeholder="Name">
+        <div class="search__name" id="gender">Gender</div>
+        <input type="text" class="search__input" id="gender_value" placeholder="Gender">
+        <div class="search__name" id="weight">Weight</div>
+        <input type="text" class="search__input" id="weight_value" placeholder="Weight in kg">
+        <div class="search__name" id="height">Height</div>
+        <input type="text" class="search__input" id="height_value" placeholder="Height in cm">
+        <div class="btn btn__secondary" id="submitBtn" onclick="submit()">Submit</div>
+
+
+        <div class="icon" id="navbar__activity">
+            <div class="icon__home">
+                <ion-icon name="home"></ion-icon>
+            </div>
+            <div class="icon__activity">
+                <ion-icon name="pulse"></ion-icon>
+            </div>
+            <div class="icon__account">
+                <ion-icon name="person"></ion-icon>
+            </div>
+            <div class="icon__settings" onclick="requestDevice()">
+                <ion-icon name="bluetooth"></ion-icon>
+            </div>
+        </div>
+    </div>
+
+
+    <script id="rendered-js" src="assets/js/script.js">
+    </script>
+
+</body>
+
+</html>

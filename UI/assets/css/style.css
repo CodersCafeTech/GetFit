@@ -1,0 +1,519 @@
+:root {
+    --primary-light: #8abdff;
+    --primary: #5868E0;
+    --primaryc: #6d5dfc;
+    --primary-dark: #5868E0;
+    --white: #FFFFFF;
+    --greyLight-1: #E4EBF5;
+    --greyLight-2: #c8d0e7;
+    --greyLight-3: #bec8e4;
+    --greyDark: #9baacf;
+    width: 100%;
+    height: 100%;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    overflow-y: scroll;
+    background: var(--greyLight-1);
+}
+
+@media screen and (max-width: 900px) {
+    html {
+        font-size: 75%;
+    }
+    .components {
+        justify-content: center;
+        align-items: center;
+        font-family: "Poppins", sans-serif;
+        background: var(--greyLight-1);
+        display: grid;
+        grid-template-columns: 20% 20% 20%;
+        grid-template-rows: repeat(autofit, -webkit-min-content);
+        grid-template-rows: repeat(autofit, min-content);
+        grid-column-gap: 4%;
+        grid-row-gap: 10%;
+        align-items: center;
+    }
+    .hello {
+        grid-row: 1/4;
+        grid-column: 1/6;
+        font-family: "Poppins", sans-serif;
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: var(--greyDark);
+        margin-top: -5rem;
+    }
+    .header__info {
+        grid-row: 1/4;
+        grid-column: 1/6;
+        font-family: "Poppins", sans-serif;
+        font-size: 1.8rem;
+        font-weight: 600;
+        margin-top: 0rem;
+    }
+    .header__info label {
+        grid-row: 1/4;
+        grid-column: 1/6;
+        font-family: "Poppins", sans-serif;
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: var(--primary);
+        margin-top: 0rem;
+    }
+    /*  BUTTONS  */
+    .btn {
+        border-radius: 2rem;
+        justify-self: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: 0.3s ease;
+        color: var(--white);
+        background-color: var(--greyDark);
+        font-size: 1.1rem;
+    }
+    #startBtn {
+        margin-right: -10rem;
+        margin-top: 6rem;
+        width: 10rem;
+        height: 3rem;
+    }
+    .btn__main {
+        width: 29rem;
+        height: 14rem;
+        border-radius: 110px 10px 10px 0px;
+        justify-self: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        grid-column: 2/4;
+        grid-row: 2/6;
+        background: var(--primary);
+        font-size: 2rem;
+        margin-top: -15%;
+        margin-left: -5%;
+    }
+    .btn__main img {
+        height: 20rem;
+        margin-left: -14rem;
+        margin-top: -2.5rem;
+    }
+    .btn p {
+        font-size: 1.6rem;
+    }
+    .activity__main {
+        grid-column: 1/8;
+        grid-row: 5/6;
+        font-size: 1.6rem;
+        font-family: "Poppins", sans-serif;
+        font-weight: 525;
+        margin-top: 2rem;
+    }
+    .details {
+        grid-column: 6/8;
+        grid-row: 5/6;
+        font-size: 2rem;
+        font-family: "Poppins", sans-serif;
+        margin-top: 160%;
+        margin-left: -20%;
+        color: var(--primary-dark);
+    }
+    .todays_activity {
+        width: 14rem;
+        height: 8rem;
+        border-radius: 10px;
+        box-shadow: 0.3rem 0.3rem 0.6rem var(--greyLight-2), -0.2rem -0.2rem 0.5rem var(--white);
+    }
+    .calorie {
+        grid-column: 1/8;
+        grid-row: 2/8;
+        display: flex;
+        justify-content: space-between;
+        margin-top: -14rem;
+    }
+    .pushup {
+        grid-column: 3/8;
+        grid-row: 1/8;
+        display: flex;
+        justify-content: space-between;
+        margin-top: -9rem;
+    }
+    .squats {
+        grid-column: 1/8;
+        grid-row: 5/8;
+        display: flex;
+        justify-content: space-between;
+        margin-top: -8rem;
+    }
+    .armcircles {
+        grid-column: 3/8;
+        grid-row: 5/8;
+        display: flex;
+        justify-content: space-between;
+        margin-top: -8rem;
+    }
+    .weekly__main {
+        grid-column: 1/8;
+        grid-row: 6/6;
+        font-size: 1.6rem;
+        font-family: "Poppins", sans-serif;
+        margin-top: -1rem;
+        font-weight: 525;
+    }
+    .weekly__details {
+        grid-column: 6/8;
+        grid-row: 6/6;
+        font-size: 2rem;
+        font-family: "Poppins", sans-serif;
+        margin-left: -5%;
+        color: var(--primary-dark);
+    }
+    .weekday {
+        width: 6rem;
+        height: 7rem;
+        border-radius: 10px;
+        box-shadow: 0.3rem 0.3rem 0.6rem var(--greyLight-2), -0.2rem -0.2rem 0.5rem var(--white);
+        margin-top: 10rem;
+        color: var(--primary);
+    }
+    .mon {
+        grid-column: 1/8;
+        grid-row: 6/6;
+    }
+    .tue {
+        grid-column: 2/8;
+        grid-row: 6/6;
+    }
+    .wed {
+        grid-column: 3/8;
+        grid-row: 6/6;
+    }
+    .thu {
+        grid-column: 4/8;
+        grid-row: 6/6;
+    }
+    .mon p {
+        justify-items: center;
+        font-size: 1.5rem;
+        margin-left: 20%;
+        margin-top: 40%;
+        font-weight: 525;
+    }
+    .tue p {
+        justify-items: center;
+        font-size: 1.5rem;
+        margin-left: 25%;
+        margin-top: 40%;
+        font-weight: 525;
+    }
+    .wed p {
+        justify-items: center;
+        font-size: 1.5rem;
+        margin-left: 22%;
+        margin-top: 40%;
+        font-weight: 525;
+    }
+    .thu p {
+        justify-items: center;
+        font-size: 1.5rem;
+        margin-left: 22%;
+        margin-top: 40%;
+        font-weight: 525;
+    }
+    /*  ICONS  */
+    #navbar__home {
+        margin-top: 90%;
+    }
+    #navbar__activity {
+        width: 90%;
+        margin-left: 1.5rem;
+        margin-top: 3.8rem;
+        margin-right: 2rem;
+    }
+    .icon {
+        grid-column: 1/8;
+        grid-row: 6/6;
+        display: flex;
+        justify-content: space-between;
+    }
+    .icon__account,
+    .icon__activity,
+    .icon__home,
+    .icon__settings {
+        width: 6rem;
+        height: 6rem;
+        border-radius: 20%;
+        box-shadow: 0.3rem 0.3rem 0.6rem var(--greyLight-2), -0.2rem -0.2rem 0.5rem var(--white);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2rem;
+        cursor: pointer;
+        color: var(--greyDark);
+    }
+    .icon__account:active,
+    .icon__activity:active,
+    .icon__home:active,
+    .icon__settings:active {
+        box-shadow: inset 0.2rem 0.2rem 0.5rem var(--greyLight-2), inset -0.2rem -0.2rem 0.5rem var(--white);
+        color: var(--primary);
+    }
+    .icon__account:hover,
+    .icon__activity:hover,
+    .icon__home:hover,
+    .icon__settings:hover {
+        color: var(--primary);
+    }
+    #daily__activity {
+        display: none;
+    }
+    #arrow__icon {
+        margin-left: 1.5rem;
+        margin-top: 1.5rem;
+    }
+    #activity {
+        margin-top: -5rem;
+        margin-bottom: 3rem;
+    }
+    .activity__stats {
+        font-family: "Poppins", sans-serif;
+        font-size: 1.8rem;
+        font-weight: 600;
+    }
+    .activity__stats p {
+        margin-top: -2.5rem;
+        margin-left: 7rem;
+    }
+    .activity__stats label {
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+        color: var(--primary);
+    }
+    .activity__card {
+        width: 14rem;
+        height: 14rem;
+        border-radius: 10%;
+        box-shadow: 0.3rem 0.3rem 0.6rem var(--greyLight-2), -0.2rem -0.2rem 0.5rem var(--white);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        color: var(--primary);
+        font-family: "Poppins", sans-serif;
+    }
+    .exercise__name {
+        margin-top: 0rem;
+        font-size: 1.6rem;
+        text-align: center;
+    }
+    .exercise__name label {
+        font-size: 4rem;
+        color: var(--greyDark);
+    }
+    .exercise__names {
+        margin-top: 1rem;
+        margin-left: 3.5rem;
+        font-size: 1.6rem;
+        font-weight: 550;
+        text-align: center;
+        color: var(--primary);
+    }
+    .exercise__names label {
+        font-size: 4rem;
+        color: var(--greyDark);
+        font-weight: 550;
+    }
+    .exercise__names__armcircles {
+        margin-top: 1rem;
+        margin-left: 2rem;
+        font-size: 1.6rem;
+        font-weight: 550;
+        text-align: center;
+        color: var(--primary);
+    }
+    .exercise__names__armcircles label {
+        font-size: 4rem;
+        color: var(--greyDark);
+        font-weight: 550;
+    }
+    .exercise__names__calories {
+        margin-top: 1rem;
+        margin-left: 3rem;
+        font-size: 1.6rem;
+        font-weight: 550;
+        text-align: center;
+        color: var(--primary);
+    }
+    .exercise__names__calories label {
+        font-size: 4rem;
+        color: var(--greyDark);
+        font-weight: 550;
+    }
+    .todays_activity .armcircles {
+        margin-left: -2rem;
+    }
+    #activity__pushup {
+        margin-top: 7.2rem;
+        margin-left: 1.5rem;
+    }
+    #activity__squats {
+        margin-left: 17.5rem;
+        margin-top: -14rem;
+    }
+    #activity__armcircles {
+        margin-left: 17.5rem;
+        margin-top: 2rem;
+    }
+    #activity__situp {
+        margin-top: -14rem;
+        margin-left: 1.5rem;
+    }
+    #activity__pullup {
+        margin-top: 2rem;
+        margin-left: 1.5rem;
+    }
+    #activity__planck {
+        margin-top: -14rem;
+        margin-left: 17.5rem;
+    }
+    #current__activity {
+        display: none;
+    }
+    #day__activity {
+        display: none;
+    }
+    .current__activity__card {
+        margin-top: 20rem;
+        margin-left: 7rem;
+        width: 18rem;
+        height: 18rem;
+        border-radius: 10%;
+        box-shadow: 0.3rem 0.3rem 0.6rem var(--greyLight-2), -0.2rem -0.2rem 0.5rem var(--white);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        color: var(--primary);
+        font-family: "Poppins", sans-serif;
+    }
+    #navbar__current {
+        margin-top: 11.2rem;
+        width: 90%;
+        margin-left: 1.5rem;
+    }
+    #activity__current {
+        text-align: center;
+    }
+    #exercise {
+        font-size: 1.8rem;
+    }
+    #count {
+        font-size: 5rem;
+        color: var(--greyDark);
+    }
+    #stopBtn {
+        margin-left: 10rem;
+        margin-top: 2rem;
+        width: 12rem;
+        height: 4rem;
+    }
+    #submitBtn {
+        margin-left: 10rem;
+        margin-top: 2rem;
+        width: 14rem;
+        height: 4rem;
+    }
+    #current__info {
+        display: none;
+    }
+    #personal {
+        display: none;
+    }
+    .search__name {
+        color: var(--primary);
+        font-size: 1.6rem;
+        margin-left: 2rem;
+        margin-top: 3rem;
+    }
+    .search__input {
+        margin-top: 0.5rem;
+        margin-left: 1.6rem;
+        width: 29rem;
+        height: 4rem;
+        border: none;
+        border-radius: 1rem;
+        font-size: 1.4rem;
+        box-shadow: inset 0.2rem 0.2rem 0.5rem var(--greyLight-2), inset -0.2rem -0.2rem 0.5rem var(--white);
+        font-family: inherit;
+        color: var(--greyDark);
+        padding-left: 1rem;
+        background: none;
+    }
+    .search__input::placeholder {
+        color: var(--greyLight-3);
+        margin-left: -2rem;
+    }
+    .search__input:focus {
+        outline: none;
+        box-shadow: 0.3rem 0.3rem 0.6rem var(--greyLight-2), -0.2rem -0.2rem 0.5rem var(--white);
+    }
+    .search__input:focus+.search__icon {
+        color: var(--primary);
+    }
+    .lds-ripple {
+        position: relative;
+        width: 80px;
+        height: 80px;
+    }
+    .lds-ripple div {
+        position: absolute;
+        border: 4px solid #276490;
+        opacity: 1;
+        border-radius: 50%;
+        animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+    }
+    .lds-ripple div:nth-child(2) {
+        animation-delay: -0.4s;
+    }
+    @keyframes lds-ripple {
+        0% {
+            top: 36px;
+            left: 36px;
+            width: 0;
+            height: 0;
+            opacity: 0;
+        }
+        4.9% {
+            top: 36px;
+            left: 36px;
+            width: 0;
+            height: 0;
+            opacity: 0;
+        }
+        5% {
+            top: 36px;
+            left: 36px;
+            width: 0;
+            height: 0;
+            opacity: 1;
+        }
+        100% {
+            top: 0px;
+            left: 0px;
+            width: 72px;
+            height: 72px;
+            opacity: 0;
+        }
+    }
+}
