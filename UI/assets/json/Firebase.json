@@ -2,10 +2,10 @@
   "friday": {
     "exercise": {
       "armcircles": {
-        "armcircles": 5
+        "armcircles": 0
       },
       "pushups": {
-        "pushups": 1
+        "pushups": 0
       },
       "squats": {
         "squats": 0
@@ -15,13 +15,13 @@
   "monday": {
     "exercise": {
       "armcircles": {
-        "armcircles": 28
+        "armcircles": 0
       },
       "pushups": {
-        "pushups": 11
+        "pushups": 0
       },
       "squats": {
-        "squats": 20
+        "squats": 0
       }
     }
   },
@@ -34,13 +34,13 @@
   "saturday": {
     "exercise": {
       "armcircles": {
-        "armcircles": 5
+        "armcircles": 0
       },
       "pushups": {
         "pushups": 0
       },
       "squats": {
-        "squats": 5
+        "squats": 0
       }
     }
   },
@@ -60,13 +60,13 @@
   "thursday": {
     "exercise": {
       "armcircles": {
-        "armcircles": 10
+        "armcircles": 0
       },
       "pushups": {
-        "pushups": 10
+        "pushups": 0
       },
       "squats": {
-        "squats": 15
+        "squats": 0
       }
     }
   },
