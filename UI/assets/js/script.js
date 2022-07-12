@@ -255,8 +255,7 @@ today = weekday[day]
 
 const firebaseConfig = {
     //Paste Your Firebase Config
-};
-
+  };
 firebase.initializeApp(firebaseConfig);
 
 var CountRef = firebase.database().ref(today + '/exercise');
@@ -310,6 +309,7 @@ var nameRef = firebase.database().ref('personal/name')
 nameRef.on('value', (snapshot) => {
     const data = snapshot.val();
     $('#name_value').val(data);
+    $('#hello_name_value').text(data);
 
 });
 
