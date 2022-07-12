@@ -1,0 +1,99 @@
+{
+  "friday": {
+    "exercise": {
+      "armcircles": {
+        "armcircles": 5
+      },
+      "pushups": {
+        "pushups": 1
+      },
+      "squats": {
+        "squats": 0
+      }
+    }
+  },
+  "monday": {
+    "exercise": {
+      "armcircles": {
+        "armcircles": 28
+      },
+      "pushups": {
+        "pushups": 11
+      },
+      "squats": {
+        "squats": 20
+      }
+    }
+  },
+  "personal": {
+    "gender": "Female",
+    "height": "168",
+    "name": "Rufyida",
+    "weight": "60"
+  },
+  "saturday": {
+    "exercise": {
+      "armcircles": {
+        "armcircles": 5
+      },
+      "pushups": {
+        "pushups": 0
+      },
+      "squats": {
+        "squats": 5
+      }
+    }
+  },
+  "sunday": {
+    "exercise": {
+      "armcircles": {
+        "armcircles": 0
+      },
+      "pushups": {
+        "pushups": 0
+      },
+      "squats": {
+        "squats": 0
+      }
+    }
+  },
+  "thursday": {
+    "exercise": {
+      "armcircles": {
+        "armcircles": 10
+      },
+      "pushups": {
+        "pushups": 10
+      },
+      "squats": {
+        "squats": 15
+      }
+    }
+  },
+  "tuesday": {
+    "exercise": {
+      "armcircles": {
+        "armcircles": 0
+      },
+      "pushups": {
+        "pushups": 0
+      },
+      "squats": {
+        "squats": 0
+      }
+    }
+  },
+  "wednesday": {
+    "exercise": {
+      "armcircles": {
+        "armcircles": 0
+      },
+      "pushups": {
+        "pushups": 0
+      },
+      "squats": {
+        "squats": 0
+      }
+    }
+  }
+}
