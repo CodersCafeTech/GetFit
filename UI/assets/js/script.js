@@ -254,13 +254,7 @@ weekday = { 0: 'sunday', 1: 'monday', 2: 'tuesday', 3: 'wednesday', 4: 'thursday
 today = weekday[day]
 
 const firebaseConfig = {
-    apiKey: "AIzaSyDN5QIeHeM2eiF2fJ2khqUuWxT1nXfjXuE",
-    authDomain: "getfit-94c47.firebaseapp.com",
-    databaseURL: "https://getfit-94c47.firebaseio.com",
-    projectId: "getfit-94c47",
-    storageBucket: "getfit-94c47.appspot.com",
-    messagingSenderId: "715931967276",
-    appId: "1:715931967276:web:546a0d691164351f0a9689"
+    //Paste Your Firebase Config
 };
 
 firebase.initializeApp(firebaseConfig);
